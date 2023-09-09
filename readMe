@@ -1,0 +1,22 @@
+echo "# newsHomeTask" >> README.md
+git init
+git add README.md
+git commit -m "first commit"
+git branch -M master
+git remote add origin https://github.com/veeramani29/newsHomeTask.git
+git push -u origin master
+
+
+curl --location --request GET 'http://localhost:1000/news' \
+--header 'Content-Type: application/json'
+
+curl --location 'http://localhost:1000/news' \
+--header 'Content-Type: application/json' \
+--data '{
+"Title": "Google to Unveil Pixel 8 Series at Made by Google Event on October 4",
+"description": "The date for the upcoming '\''Made by Google'\'' event has been revealed . Google will be launching Pixel 8 series at the event.",
+"content": "The date for the upcoming ‘Made by Google’ event has been revealed . Google will be launching Pixel 8 series, which includes the Pixel 8 and Pixel 8 Pro the event. The event will be held on October 4 at 10:00 am in New York (7:30 pm in India). Along ... [2891 chars]",
+"url": "https://www.themobileindian.com/news/google-to-unveil-pixel-8-series-at-made-by-google-event-on-october-4",
+"image": "https://www.themobileindian.com/wp-content/uploads/2023/09/pixel-8-series-launch.png",
+"publishedAt": "2023-09-09T06:38:26Z"
+}'
